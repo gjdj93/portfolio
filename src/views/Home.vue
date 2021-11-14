@@ -1,5 +1,5 @@
 <template>
-  <div class="flex w-full h-full items-center justify-center">
+  <div>
     <div class="text-center">
       <h1 class="text-4xl font-semibold max-w-lg mx-auto">
         Hi! My name is <span class="text-brand">Greg Ottley</span> and I am a

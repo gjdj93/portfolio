@@ -1,5 +1,7 @@
 <template>
-  <h1>Contact</h1>
+  <div>
+    <p>You can use the form below to get in touch, or you can send me an email.</p>
+  </div>
 </template>
 
 <script>
