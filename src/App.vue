@@ -2,7 +2,7 @@
   <div class="overflow-hidden w-full h-screen bg-gray-900 text-white">
     <div class="page flex flex-col h-full transition duration-500 transform">
       <Header />
-      <div class="content relative px-10% flex-auto">
+      <div class="content relative px-10% flex-auto overflow-auto">
         <!-- <transition name="fade" appear> -->
         <router-view />
         <!-- </transition> -->

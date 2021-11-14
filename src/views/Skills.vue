@@ -24,6 +24,10 @@ export default {
           progress: 100,
         },
         {
+          name: "ASP",
+          progress: 100,
+        },
+        {
           name: "CSS",
           progress: 100,
         },
@@ -40,16 +44,52 @@ export default {
           progress: 100,
         },
         {
-          name: "ASP",
-          progress: 100,
+          name: "NodeJS",
+          progress: 75,
+        },
+        {
+          name: "Vue",
+          progress: 75,
+        },
+        {
+          name: "React",
+          progress: 50,
+        },
+        {
+          name: "React Native",
+          progress: 60,
+        },
+        {
+          name: "PHP",
+          progress: 60
+        },
+        {
+          name: "Laravel",
+          progress: 60
         },
         {
           name: "MSSQL",
           progress: 100,
         },
         {
-          name: "PHP",
-          progress: 75
+          name: "MySQL",
+          progress: 100,
+        },
+        {
+          name: "PostgreSQL",
+          progress: 50,
+        },
+        {
+          name: "mongoDB",
+          progress: 50
+        },
+        {
+          name: "Python",
+          progress: 25,
+        },
+        {
+          name: "Django",
+          progress: 25
         }
       ],
     };
