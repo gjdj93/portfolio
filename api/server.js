@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 const port = 3070;
 const { transporter }  = require('./sendmail')
+require('dotenv').config();
 
 app.use(express.static(path.join(__dirname, "../dist")));
 
@@ -14,12 +15,8 @@ app.get("/email", (req, res) => {
     } else {
       console.log("success", success); 
       let message = {
-        from: "website@gregottley.co.uk",
+        from: process.env.EMAIL_FROM_ADDRESS,
         to: "greg.ottley@outlook.com",
-        envelope: {
-          from: "Greg <website@gregottley.co.uk>",
-          to: "greg.ottley@outlook.com",
-        },
         subject: "Nodemailer test",
         text: "Hello, this is a test sending email",
         html: "<p>Hello, this is a test sending email</p>",
