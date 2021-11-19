@@ -13,31 +13,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/email", (req, res) => {
-  
-  transporter.verify(function (error, success) {
-    if (error) {
-      console.log("error", error);
-    } else {
-      console.log("success", success); 
-      let message = {
-        from: process.env.EMAIL_FROM_ADDRESS,
-        to: "greg.ottley@outlook.com",
-        subject: "Nodemailer test",
-        text: "Hello, this is a test sending email",
-        html: "<p>Hello, this is a test sending email</p>",
-      };
-      transporter.sendMail(message, (error, info) => {
-          if (error) {
-              return console.log('error', error);
-          }
-          console.log('message sent: %s', info.messageId);
-      })
-    }
-  });
-  res.send("send an email");
-});
-
 app.post("/send-mail", (req, res) => {
   const { name, phone, email, subject, message } = req.body;
   transporter.verify(function (error) {
@@ -56,7 +31,6 @@ app.post("/send-mail", (req, res) => {
               res.send({"status": 500, "message": "Message failed"});
               return console.log('error', error);
           }
-          console.log('message sent: %s', info.messageId);
           res.send({"status": 200, "message": "Message sent successfully"});
       })
     }
