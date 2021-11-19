@@ -3,6 +3,7 @@ import Home from "@/views/Home";
 import Resume from "@/views/Resume";
 import Projects from "@/views/Projects";
 import Contact from "@/views/Contact";
+import NotFound from "@/views/NotFound";
 
 export const routes = [
   {
@@ -25,6 +26,11 @@ export const routes = [
     name: "Contact",
     component: Contact,
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "notFound",
+    component: NotFound
+  }
 ];
 
 const router = createRouter({

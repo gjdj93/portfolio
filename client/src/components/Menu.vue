@@ -2,7 +2,7 @@
   <div :class="order">
     <button class="menu__btn z-50" :class="`${active ? 'menu--active' : ''}`" :title=" `${active ? 'Close' : 'Open'} Menu`" @click="toggleMenu"><span class="line-1"></span><span class="line-2"></span><span class="line-3"></span></button>
     <ul class="menu bg-gray-900 text-white flex flex-col justify-center text-center h-full w-64 max-w-full fixed z-40 top-0 right-0 transition duration-500 transform" :class="active ? 'menu--active' : 'translate-x-full'">
-      <li class="menu-item block" v-for="route in routes" :key="route.name">
+      <li class="menu-item block" v-for="route in menuRoutes" :key="route.name">
         <router-link class="transition duration-500" :to="route.path">{{ route.name }}</router-link>
       </li>
     </ul>
@@ -20,10 +20,17 @@ export default {
       default: 'order-3'
     }
   },
+  computed: {
+    menuRoutes() {
+      const menuLinks = routes.filter(route => {
+        return route.name !== 'notFound';
+      });
+      return menuLinks
+    }
+  },
   data() {
     return {
       active: false,
-      routes: routes
     }
   },
   methods: {
